@@ -1,122 +1,141 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Heart, Home, Instagram, Facebook, MapPin, PawPrint, HandHeart } from 'lucide-react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Reemplaza estos enlaces con los reales de Instagram y Facebook
+  const instagramUrl = "https://www.instagram.com/";
+  const facebookUrl = "https://www.facebook.com/";
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="page">
+      {/* Barra superior sencilla */}
+      <nav className="navbar">
+        <div className="nav-brand">
+          <PawPrint size={24} className="brand-icon" />
+          <span>Huellitas Felices</span>
         </div>
-        <div>
-          <h1>Get started</h1>
+        <div className="nav-links">
+          <a href="#historia">Historia</a>
+          <a href="#labor">Nuestra Labor</a>
+          <a href="#redes">Ayudar</a>
+        </div>
+      </nav>
+
+      {/* Portada principal */}
+      <header className="hero">
+        <div className="hero-content">
+          <div className="badge">
+            <MapPin size={16} />
+            <span>Barrio Florida, Engativá • Bogotá</span>
+          </div>
+          <h1>Rescatamos vidas, sanamos corazones en casa</h1>
+          <p className="subtitle">
+            Somos tres vecinas del barrio Florida unidas por una misma misión: 
+            recoger animalitos en situación de calle, rehabilitarlos en nuestros propios 
+            hogares y darles una segunda oportunidad llena de amor.
+          </p>
+          <div className="cta-buttons">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ig">
+              <Instagram size={20} />
+              Ir a nuestro Instagram
+            </a>
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="btn btn-fb">
+              <Facebook size={20} />
+              Ir a nuestro Facebook
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Sección: Quiénes somos */}
+      <section id="historia" className="section about">
+        <div className="section-inner">
+          <h2>¿Quiénes somos?</h2>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            <strong>Huellitas Felices</strong> nació del corazón de tres señoras de la comunidad 
+            del barrio Florida en Engativá. Al ver tantos perritos y gaticos abandonados en nuestro 
+            sector, decidimos abrir las puertas de nuestras propias casas para convertirlas en 
+            hogares de paso y rehabilitación.
+          </p>
+          <p>
+            No contamos con un gran refugio comercial; nuestro motor es el esfuerzo diario, 
+            la solidaridad de los vecinos y la convicción de que cada peludito merece calor de hogar, 
+            alimento y cuidados veterinarios mientras recupera su salud y confianza.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
       </section>
 
-      <div className="ticks"></div>
+      {/* Sección: Nuestra labor */}
+      <section id="labor" className="section labor">
+        <div className="section-inner">
+          <h2>Así transformamos sus vidas</h2>
+          <div className="cards">
+            <div className="card">
+              <div className="card-icon-box">
+                <PawPrint size={28} />
+              </div>
+              <h3>1. Rescate</h3>
+              <p>
+                Auxiliamos animalitos vulnerables o abandonados en las calles de nuestra localidad 
+                para ponerlos a salvo de inmediato.
+              </p>
+            </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+            <div className="card">
+              <div className="card-icon-box">
+                <Home size={28} />
+              </div>
+              <h3>2. Rehabilitación en casa</h3>
+              <p>
+                Los cuidamos en nuestros hogares con alimentación, atención veterinaria, paciencia 
+                y mucho cariño hasta que sanan física y emocionalmente.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="card-icon-box">
+                <Heart size={28} />
+              </div>
+              <h3>3. Adopción y apoyo</h3>
+              <p>
+                Compartimos sus historias en redes sociales para conseguirles familias responsables 
+                o recibir ayudas para su manutención.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Sección: Redes Sociales / Cómo ayudar */}
+      <section id="redes" className="section social-cta">
+        <div className="social-box">
+          <HandHeart size={40} className="social-box-icon" />
+          <h2>¡Conoce a nuestros rescatados y ayúdanos!</h2>
+          <p>
+            En nuestras redes sociales publicamos el día a día de los peluditos que estamos 
+            rehabilitando, jornadas de adopción y cómo puedes aportar (con alimento, medicinas, 
+            adopción o compartiendo nuestras publicaciones).
+          </p>
+          <div className="cta-buttons">
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ig">
+              <Instagram size={20} />
+              Síguenos en Instagram
+            </a>
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" className="btn btn-fb">
+              <Facebook size={20} />
+              Síguenos en Facebook
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Pie de página */}
+      <footer className="footer">
+        <p><strong>Huellitas Felices</strong> — Rescate y rehabilitación animal</p>
+        <p className="footer-loc">Barrio Florida, Engativá • Bogotá, Colombia</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
