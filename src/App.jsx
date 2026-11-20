@@ -204,8 +204,8 @@ const HELP_OPTIONS = [
 
 function App() {
   // ⚠️ REEMPLAZA AQUÍ CON LOS ENLACES REALES DE HUELLITAS FELICES
-  const instagramUrl = 'https://www.instagram.com/';
-  const facebookUrl = 'https://www.facebook.com/';
+  const instagramUrl = 'https://www.instagram.com/rescatistas_huellitas_felices_/';
+  const facebookUrl = 'https://www.facebook.com/people/Rescatistas-Huellitas-Felices-Bogot%C3%A1/100057263477510/?mibextid=ZbWKwL';
 
   const [activeHelp, setActiveHelp] = useState(HELP_OPTIONS[0].id);
   const currentHelp = HELP_OPTIONS.find((item) => item.id === activeHelp);
